@@ -6,6 +6,7 @@ public abstract class Conta implements IConta{
 	protected int agencia;
 	protected int conta;
 	protected double saldo;
+	private Cliente titular;
 	
 	public Conta() {
 		this.agencia = AGENCIA_PADRAO;
@@ -32,19 +33,15 @@ public abstract class Conta implements IConta{
 			
 	}	
 		
+	public Cliente getTitular() {
+		return titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
 		
-		
-//	public void sacar() {
-//		
-//	}
-//	
-//	public void depositar() {
-//		
-//	}
-//	
-//	public void transferir() {
-//		
-//	}
 	protected void imprimirInfosComuns() {
 		System.out.println(String.format("Agencia: %d", this.agencia));
 		System.out.println(String.format("Conta: %d", this.conta));
